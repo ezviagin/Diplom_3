@@ -1,0 +1,8 @@
+BASE_URL = "https://stellarburgers.nomoreparties.site"
+USER_LOGIN = "/login"
+USER_PROFILE = "/profile"
+USER_REGISTER = "/register"
+USER_PASSWORD = "/forgot-password"
+USER_PASSWORD_RECOVERY = "/reset-password"
+ORDER_HISTORY = "/order-history"
+FEED = "/feed"
