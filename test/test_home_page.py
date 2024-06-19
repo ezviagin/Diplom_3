@@ -3,7 +3,7 @@ import pytest
 
 from conftest import driver, user
 from pages.home_page import HomePage
-from pages.login_page import LoginPage
+from pages.account_page import AccountPage
 from helpers.urls import *
 
 
@@ -55,7 +55,7 @@ class TestHomePage:
         page.navigate(BASE_URL)
         page.click_on_personal_space_button()
 
-        login_page = LoginPage(driver)
+        login_page = AccountPage(driver)
         login_page.set_email(user.get_email())
         login_page.set_password(user.get_password())
         login_page.click_enter_button()

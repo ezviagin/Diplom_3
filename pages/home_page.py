@@ -60,4 +60,7 @@ class HomePage(BasePage):
 
     @allure.step("Прочитать поле, куда приходит уведомление, что заказ начал готовиться")
     def get_your_order_is_being_prepared_field(self):
-        return self._element_is_visible(HomePageLocators.YOUR_ORDER_IS_BEING_PREPARED)
+        return self._is_element_displayed(HomePageLocators.YOUR_ORDER_IS_BEING_PREPARED)
+
+    def wait_for_create_order_button(self):
+        return self._is_element_displayed(HomePageLocators.CREATE_ORDER_BUTTON)
