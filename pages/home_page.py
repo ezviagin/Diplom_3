@@ -10,7 +10,7 @@ class HomePage(BasePage):
 
     @allure.step("Нажать кнопку \"Лента Заказов\"")
     def click_order_feed_button(self):
-        return self._click_element(HomePageLocators.ORDER_FEED_HEADER_BUTTON)
+        return self._click_element(HomePageLocators.ORDER_FEED_HEADER_BUTTON, timeout=600)
 
     @allure.step("Дрождаться появления заголовка \"Лента заказов\"")
     def wait_for_order_feed_header(self):
@@ -38,7 +38,7 @@ class HomePage(BasePage):
 
     @allure.step("Дождаться появление кнопки закрытия всплывающего окна с ингредиентом (крестик)")
     def wait_for_close_popup_ingredient_window_button(self):
-        return self._is_element_displayed(HomePageLocators.CROSS_CLOSE_BUTTON)
+        return self._is_element_displayed(HomePageLocators.CROSS_CLOSE_BUTTON, timeout=30)
 
     @allure.step("Перетащить Флюорисцентную булочку в поле заказа")
     def drag_and_drop_flur_bun(self):
@@ -56,11 +56,24 @@ class HomePage(BasePage):
 
     @allure.step("Нажать кнопку \"Создать заказ\"")
     def click_create_order_button(self):
-        self._click_element(HomePageLocators.CREATE_ORDER_BUTTON)
+        self._click_element_js(HomePageLocators.CREATE_ORDER_BUTTON)
 
     @allure.step("Прочитать поле, куда приходит уведомление, что заказ начал готовиться")
     def get_your_order_is_being_prepared_field(self):
         return self._is_element_displayed(HomePageLocators.YOUR_ORDER_IS_BEING_PREPARED)
 
+    @allure.step("Дождаться появления кнопки \"Создать заказ\"")
     def wait_for_create_order_button(self):
         return self._is_element_displayed(HomePageLocators.CREATE_ORDER_BUTTON)
+
+    @allure.step("Дождаться, когда исчезнет перекрывающий страницу элемент Modal Overlay")
+    def wait_for_modal_overlay_to_disappear(self):
+        self.wait_for_element_to_disappear(HomePageLocators.MODAL_OVERLAY_ELEMENT)
+
+    @allure.step("Дождаться прогрузки картинки при оформлении заказа")
+    def wait_for_visibility_load_img(self):
+        return self._element_is_visible(HomePageLocators.LOADING_IMG_ORDER_FORMATION)
+
+    @allure.step("Получить номер созданного заказа")
+    def get_new_order_number(self):
+        return self._find_element(HomePageLocators.NEW_ORDER_NUMBER).text

@@ -40,3 +40,15 @@ class HomePageLocators:
 
     # Текст "Ваш заказ начали готовить" на всплывающем окне после офомрления заказа
     YOUR_ORDER_IS_BEING_PREPARED = (By.XPATH, ".//p[contains(text(),'Ваш заказ начали готовить')]")
+
+    # Элемент, перекрывающий всю страницу и иногда не дающий нажать на кнопку
+    MODAL_OVERLAY_ELEMENT = (By.XPATH, ".//div[contains(@class, 'Modal_modal_overlay__x2ZCr')]")
+
+    # Картинка прогрузки создания заказа
+    LOADING_IMG_ORDER_FORMATION = (By.CSS_SELECTOR, ".Modal_modal__image__2nh17")
+
+    # Новый номер заказа
+    NEW_ORDER_NUMBER = (
+        By.XPATH,
+        ".//h2[contains(@class,'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8')]",
+    )

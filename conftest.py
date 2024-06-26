@@ -1,14 +1,14 @@
 import pytest
 
 from selenium import webdriver
-from pages.base_page import BasePage
 from user_api.stellar_burger_api import User
-from helpers.urls import BASE_URL
 
 
 @pytest.fixture(scope='class')
 def driver():
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    #driver.implicitly_wait(10)
     yield driver
     driver.quit()
 
@@ -18,4 +18,19 @@ def user():
     user = User()
     user.create_user()
     yield user
+    user.logout_user()
     user.delete_user()
+
+'''
+@pytest.fixture(params=["chrome", "firefox"])
+def driver(request):
+    if request.param == "chrome":
+        driver = webdriver.Chrome()
+    elif request.param == "firefox":
+        driver = webdriver.Firefox()
+
+    driver.get(BASE_URL)
+    yield driver
+
+    driver.quit()
+'''

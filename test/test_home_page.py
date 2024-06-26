@@ -1,5 +1,4 @@
 import allure
-import pytest
 
 from conftest import driver, user
 from pages.home_page import HomePage
@@ -7,6 +6,7 @@ from pages.account_page import AccountPage
 from helpers.urls import *
 
 
+@allure.title("Тестирование Домашней страницы")
 class TestHomePage:
     @allure.description("Переход по кнопке \"Лента Заказов\" в шапке")
     def test_click_on_order_feed_button(self, driver):
@@ -37,9 +37,10 @@ class TestHomePage:
         page.click_ingredient()
         page.wait_for_ingredient_details_title()
         page.click_close_popup_ingredient_window()
-        assert page.wait_for_close_popup_ingredient_window_button() is False
+        page.wait_for_assemble_burger_title()
+        is_closed = page.wait_for_close_popup_ingredient_window_button()
+        assert  is_closed is False
 
-    # TODO: fix locator, the test is failing
     @allure.description("При добавлении ингредиента в заказ счётчик этого ингридиента увеличивается")
     def test_drag_and_drop_fluor_bun(self, driver):
         page = HomePage(driver)
@@ -47,8 +48,6 @@ class TestHomePage:
         page.drag_and_drop_flur_bun()
         assert page.get_ingredient_num_in_order() > 0
 
-    # В тесте создаётся и удаляется тестовый пользователь с помощью API согласно заданию
-    # TODO: fix the locator for drag_and_drop above
     @allure.description("Оформить заказ авторизированным пользователем")
     def test_create_order_with_logged_in_user(self, driver, user):
         page = HomePage(driver)

@@ -52,3 +52,6 @@ class User:
     def delete_user(self, access_token: str = None):
         token = access_token if access_token else self.access_token
         return requests.delete(f"{BASE_URL}{DELETE_USER}", headers={"Authorization": token})
+
+    def logout_user(self):
+        return requests.post(f"{BASE_URL}{LOGOUT_USER}", json={"token": self.refresh_token})
