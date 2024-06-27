@@ -11,7 +11,7 @@ class OrderListPage(AccountPage):
 
     @allure.step("Ждем кликабельности по номеру последнего заказа")
     def wait_clickable_last_order(self):
-        return self.wait_for_element_is_clickable(OrderListLocators.LAST_ORDER)
+        return self._wait_for_element_is_clickable(OrderListLocators.LAST_ORDER)
 
     @allure.step("Кликаем по последнему заказу")
     def click_last_order(self):
@@ -46,16 +46,16 @@ class OrderListPage(AccountPage):
 
     @allure.step("Получаем номер последнего заказа в Работе")
     def get_order_list_in_work(self):
-        return self._find_element(OrderListLocators.IN_WORK_CHAPTER).text
-
-    @allure.step("Ожидаем появления номера заказа в Работе")
-    def wait_for_visibility_order_number_in_work(self):
-        return self._element_is_visible(OrderListLocators.ORDER_IN_WORK)
+        return self._find_element(OrderListLocators.ALL_ORDER_NUMBERS_IN_ORDER_LIST).text
 
     @allure.step("Ожидаем кликабельности кнопки-крестика вплывающего окна \"Ваш заказ начали готовить\"")
     def wait_for_clickable_close_success_order_window_button(self):
-        return self.wait_for_element_is_clickable(OrderListLocators.CLOSE_SUCCESS_ORDER_WINDOW_BUTTON)
+        return self._wait_for_element_is_clickable(OrderListLocators.CLOSE_SUCCESS_ORDER_WINDOW_BUTTON)
 
     @allure.step("Закрыть окно \"Заказ успешно создан\"")
     def close_success_order_window(self):
         self._click_element(OrderListLocators.CLOSE_SUCCESS_ORDER_WINDOW_BUTTON)
+
+    @allure.step("Ожидаем появления номера заказа в Работе")
+    def wait_for_visibility_order_number_in_work(self):
+        return self._element_is_visible(OrderListLocators.ORDER_IN_WORK)

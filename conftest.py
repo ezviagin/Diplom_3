@@ -8,9 +8,16 @@ from user_api.stellar_burger_api import User
 def driver():
     driver = webdriver.Chrome()
     driver.maximize_window()
-    #driver.implicitly_wait(10)
+    driver.implicitly_wait(10)
     yield driver
     driver.quit()
+
+
+@pytest.fixture(scope='function', autouse=True)
+def clean_cookies(driver):
+    driver.delete_all_cookies()
+    yield
+    driver.delete_all_cookies()
 
 
 @pytest.fixture(scope='function')
@@ -18,7 +25,6 @@ def user():
     user = User()
     user.create_user()
     yield user
-    user.logout_user()
     user.delete_user()
 
 '''

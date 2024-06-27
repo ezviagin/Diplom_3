@@ -1,4 +1,3 @@
-from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
@@ -36,18 +35,24 @@ class BasePage:
         if element:
             element.click()
         else:
-            return
+            return None
 
-    def _click_element_js(self, locator: tuple[str, str], timeout: int = 600):
+    def _click_element_js(self, locator: tuple[str, str], timeout: int = 10):
         element = self._find_element(locator, timeout)
         if element:
             self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
             self.driver.execute_script("arguments[0].click();", element)
         else:
-            return
+            return None
+
+    def _wait_for_element_to_be_clickable(self, locator: tuple[str, str], timeout: int = 10):
+        try:
+            return WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(locator))
+        except TimeoutException:
+            return None
 
     def _enter_text(self, locator: tuple[str, str], text: str, timeout: int = 10):
-        element = self._find_element(locator, timeout)
+        element = self._wait_for_element_to_be_clickable(locator, timeout)
         if element:
             element.clear()
             element.send_keys(text)
@@ -71,18 +76,6 @@ class BasePage:
         self.driver.execute_script("arguments[0].scrollIntoView();", self._find_element(locator))
         self._element_is_visible(locator, timeout)
 
-    def _press_enter_button(self, locator: tuple[str, str], timeout: int = 10):
-        self._find_element(locator, timeout).send_keys(Keys.ENTER)
-
-    def _switch_to(self, window_number: int = 1):
-        self.driver.switch_to.window(self.driver.window_handles[window_number])
-
-    def _close_page(self):
-        self.driver.close()
-
-    def _wait_for_url(self, timeout: int = 10):
-        WebDriverWait(self.driver, timeout).until_not(ec.url_matches('about:blank'))
-
     def _drag_and_drop(self, src, tgt):
         drag_and_drop(self.driver, src, tgt)
 
@@ -93,8 +86,8 @@ class BasePage:
         except (NoSuchElementException, TimeoutException):
             return False
 
-    def wait_for_element_to_disappear(self, locator: tuple[str, str], timeout: int = 10):
-        WebDriverWait(self.driver, 10).until_not(ec.presence_of_element_located(locator))
+    def _wait_for_element_to_disappear(self, locator: tuple[str, str], timeout: int = 10):
+        return WebDriverWait(self.driver, timeout).until_not(ec.presence_of_element_located(locator))
 
-    def wait_for_element_is_clickable(self, locator: tuple[str, str], timeout: int = 10):
-        WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(locator))
+    def _wait_for_element_is_clickable(self, locator: tuple[str, str], timeout: int = 10):
+        return WebDriverWait(self.driver, timeout).until(ec.element_to_be_clickable(locator))

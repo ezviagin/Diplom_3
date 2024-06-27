@@ -1,9 +1,9 @@
 import allure
 
 from conftest import driver, user
-from pages.home_page import HomePage
-from pages.account_page import AccountPage
 from helpers.urls import *
+from pages.account_page import AccountPage
+from pages.home_page import HomePage
 
 
 @allure.title("Тестирование Домашней страницы")
@@ -37,15 +37,14 @@ class TestHomePage:
         page.click_ingredient()
         page.wait_for_ingredient_details_title()
         page.click_close_popup_ingredient_window()
-        page.wait_for_assemble_burger_title()
-        is_closed = page.wait_for_close_popup_ingredient_window_button()
-        assert  is_closed is False
+        is_closed = page.wait_for_popup_ingredient_window()
+        assert is_closed is True
 
     @allure.description("При добавлении ингредиента в заказ счётчик этого ингридиента увеличивается")
-    def test_drag_and_drop_fluor_bun(self, driver):
+    def test_drag_and_drop_fluorescent_bun(self, driver):
         page = HomePage(driver)
         page.navigate(BASE_URL)
-        page.drag_and_drop_flur_bun()
+        page.drag_and_drop_fluorescent_bun()
         assert page.get_ingredient_num_in_order() > 0
 
     @allure.description("Оформить заказ авторизированным пользователем")
@@ -53,14 +52,13 @@ class TestHomePage:
         page = HomePage(driver)
         page.navigate(BASE_URL)
         page.click_on_personal_space_button()
-
         login_page = AccountPage(driver)
         login_page.set_email(user.get_email())
         login_page.set_password(user.get_password())
-        login_page.click_enter_button()
         login_page.wait_for_visibility_enter_button()
-
-        page.drag_and_drop_flur_bun()
+        login_page.click_enter_button()
+        page.wait_for_create_order_button()
+        page.drag_and_drop_fluorescent_bun()
         page.click_create_order_button()
-
+        page.wait_for_close_popup_ingredient_window_button()
         assert page.get_your_order_is_being_prepared_field().text == "Ваш заказ начали готовить"

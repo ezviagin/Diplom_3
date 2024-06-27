@@ -19,7 +19,7 @@ class TestPersonalSpacePage:
 
     @allure.description("Переход в раздел \"История заказов\" в Личном кабинете")
     def test_click_on_order_history(self, driver, user):
-        page = AccountPage(driver)
+        page = PersonalSpacePage(driver)
         page.navigate(BASE_URL)
         page.click_on_personal_space_button()
         page.set_email(user.get_email())
@@ -27,27 +27,26 @@ class TestPersonalSpacePage:
         page.click_enter_button()
         page.wait_for_create_order_button()
         page.click_on_personal_space_button()
-        page = PersonalSpacePage(driver)
+        page.wait_for_you_can_change_personal_data_text_hint()
         page.click_on_order_history_button()
         page.wait_for_you_can_change_personal_data_text_hint()
         assert page.current_url() == f"{BASE_URL}{ORDER_HISTORY}"
 
     @allure.title("Проверка выхода из аккаунта при нажатии кнопки \"Выйти\" в Личном кабинете")
     def test_click_logout_page(self, driver, user):
-        page = AccountPage(driver)
+        page = PersonalSpacePage(driver)
         page.navigate(BASE_URL)
         page.click_on_personal_space_button()
         page.set_email(user.get_email())
         page.set_password(user.get_password())
         page.click_enter_button()
-        page.wait_for_assemble_burger_title()
+        page.wait_for_create_order_button()
         page.click_on_personal_space_button()
-        page = PersonalSpacePage(driver)
-        page.wait_for_you_can_change_personal_data_text_hint()
+        page.wait_for_logout_button_is_clickable()
         page.click_on_logout_button()
         page.wait_for_visibility_login_button()
-
         assert page.current_url() == f"{BASE_URL}{USER_LOGIN}"
+
 
 @allure.title("Тестирование восстановления пароля пользователя")
 class TestPasswordRecovery:

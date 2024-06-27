@@ -34,3 +34,9 @@ class OrderListLocators:
     # Последний заказ в списке "В работе"
     ORDER_IN_WORK = (By.XPATH, ".//li[contains(@class, 'text text_type_digits-default mb-2')])[6][1]")
 
+    # Все номера заказов в Ленте заказов
+    ALL_ORDER_NUMBERS_IN_ORDER_LIST = (By.XPATH, '//ul[@class="OrderFeed_list__OLh59"]/li['
+                                                 '@class="OrderHistory_listItem__2x95r mb-6"]/a['
+                                                 '@class="OrderHistory_link__1iNby"]/div['
+                                                 '@class="OrderHistory_textBox__3lgbs mb-6"]/p[@class="text '
+                                                 'text_type_digits-default"]')

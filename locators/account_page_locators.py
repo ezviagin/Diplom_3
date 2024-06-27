@@ -9,7 +9,8 @@ class AccountPageLocators:
     PASSWORD_FIELD = (By.XPATH, ".//input[contains(@name,'Пароль')]")
 
     # Кнопка "Войти"
-    ENTER_BUTTON = (By.XPATH, ".//button[contains(text(),'Войти')]")
+    #ENTER_BUTTON = (By.XPATH, ".//button[contains(text(),'Войти')]")
+    ENTER_BUTTON = (By.XPATH, ".//button[contains(@class, 'button_button__33qZ0')]")
 
     # Кнопка "Войти"
     ENTER_INTO_ACCOUNT_BUTTON = (By.XPATH, ".//button[contains(text(),'Войти в аккаунт')]")
@@ -37,4 +38,4 @@ class AccountPageLocators:
         By.XPATH,
         ".//div[@class='input pr-6 pl-6 input_type_text input_size_default input_status_active']")
 
-    LOGIN_BUTTON = (By.XPATH, "(//button[contains(text(), 'Войти')])[1]")
+    LOGIN_BUTTON = (By.XPATH, "(.//button[contains(text(), 'Войти')])[1]")

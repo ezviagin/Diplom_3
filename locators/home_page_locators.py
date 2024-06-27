@@ -18,7 +18,7 @@ class HomePageLocators:
     ASSEMBLE_BURGER_TITLE = (By.XPATH, ".//h1[contains(text(), 'Соберите бургер')]")
 
     # Кнопка "Флюорисцентная булка"
-    FLUR_BUN_BUTTON = (By.XPATH, ".//img[@alt='Флюоресцентная булка R2-D3']")
+    FLUORESCENT_BUN_BUTTON = (By.XPATH, ".//img[@alt='Флюоресцентная булка R2-D3']")
 
     # Заголовок всплывающего окна "
     INGREDIENT_DETAILS_TITLE = (By.XPATH, ".//h2[contains(text(),'Детали ингредиента')]")
@@ -26,14 +26,18 @@ class HomePageLocators:
     # Кнопка закрытия всплывающего окна (крестик)
     CROSS_CLOSE_BUTTON = (By.XPATH, "(.//button[@type='button' and contains(@class, 'modal__close')])[1]")
 
+    # Всплывающее окно со списком ингредиентов в заказе
+    #INGREDIENT_DETAILS_POPUP_WINDOW = (By.XPATH, ".//div[@class='Modal_modal__container__Wo2l_']")
+    INGREDIENT_DETAILS_POPUP_WINDOW = (By.XPATH, "(.//div[@class='Modal_modal__container__Wo2l_'])[1]")
+
     # Поле для перетаскивания ингредиентов
     ADD_TO_ORDER_FIELD = (By.XPATH, ".//ul[contains(@class, 'BurgerConstructor_basket__list')]")
 
     # Флюорисцентная булка
-    FLUORESCENT_BUN = (By.XPATH, "//img[@alt='Флюоресцентная булка R2-D3']")
+    FLUORESCENT_BUN = (By.XPATH, ".//img[@alt='Флюоресцентная булка R2-D3']")
 
     # Счетчик добавления флюорисцентной булочки
-    COUNTER_FLUORESCENT_BUN = (By.CSS_SELECTOR, "[class= 'counter_counter__num__3nue1']")
+    COUNTER_FLUORESCENT_BUN = (By.CSS_SELECTOR, "[class='counter_counter__num__3nue1']")
 
     # Кнопка "Создать заказ"
     CREATE_ORDER_BUTTON = (By.XPATH, ".//button[contains(text(),'Оформить заказ')]")
@@ -44,11 +48,9 @@ class HomePageLocators:
     # Элемент, перекрывающий всю страницу и иногда не дающий нажать на кнопку
     MODAL_OVERLAY_ELEMENT = (By.XPATH, ".//div[contains(@class, 'Modal_modal_overlay__x2ZCr')]")
 
-    # Картинка прогрузки создания заказа
-    LOADING_IMG_ORDER_FORMATION = (By.CSS_SELECTOR, ".Modal_modal__image__2nh17")
-
     # Новый номер заказа
     NEW_ORDER_NUMBER = (
         By.XPATH,
-        ".//h2[contains(@class,'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text text_type_digits-large mb-8')]",
+        ".//h2[contains(@class,'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text "
+        "text_type_digits-large mb-8')]",
     )

@@ -2,6 +2,7 @@ import allure
 
 from locators.home_page_locators import HomePageLocators
 from pages.base_page import BasePage
+import time
 
 
 class HomePage(BasePage):
@@ -10,7 +11,7 @@ class HomePage(BasePage):
 
     @allure.step("Нажать кнопку \"Лента Заказов\"")
     def click_order_feed_button(self):
-        return self._click_element(HomePageLocators.ORDER_FEED_HEADER_BUTTON, timeout=600)
+        return self._click_element_js(HomePageLocators.ORDER_FEED_HEADER_BUTTON)
 
     @allure.step("Дрождаться появления заголовка \"Лента заказов\"")
     def wait_for_order_feed_header(self):
@@ -26,7 +27,7 @@ class HomePage(BasePage):
 
     @allure.step("Нажать на ингредиент \"Флюорисцентная булка\"")
     def click_ingredient(self):
-        self._click_element(HomePageLocators.FLUR_BUN_BUTTON)
+        self._click_element(HomePageLocators.FLUORESCENT_BUN_BUTTON)
 
     @allure.step("Дождаться появления заголовка всплывающего окна \"Детали ингредиента\"")
     def wait_for_ingredient_details_title(self):
@@ -34,14 +35,18 @@ class HomePage(BasePage):
 
     @allure.step("Нажать на закрытие всплывающего окна с ингредиентом (крестик)")
     def click_close_popup_ingredient_window(self):
-        self._click_element(HomePageLocators.CROSS_CLOSE_BUTTON)
+        self._click_element_js(HomePageLocators.CROSS_CLOSE_BUTTON)
 
-    @allure.step("Дождаться появление кнопки закрытия всплывающего окна с ингредиентом (крестик)")
+    @allure.step("Дождаться появление всплывающего окна со списком ингредиентов в заказе")
     def wait_for_close_popup_ingredient_window_button(self):
-        return self._is_element_displayed(HomePageLocators.CROSS_CLOSE_BUTTON, timeout=30)
+        return self._is_element_displayed(HomePageLocators.INGREDIENT_DETAILS_POPUP_WINDOW)
+
+    @allure.step("Дождаться появление всплывающего окна с заказом")
+    def wait_for_popup_ingredient_window(self):
+        return self._element_is_present(HomePageLocators.INGREDIENT_DETAILS_POPUP_WINDOW)
 
     @allure.step("Перетащить Флюорисцентную булочку в поле заказа")
-    def drag_and_drop_flur_bun(self):
+    def drag_and_drop_fluorescent_bun(self):
         src = self._find_element(HomePageLocators.FLUORESCENT_BUN)
         tgt = self._find_element(HomePageLocators.ADD_TO_ORDER_FIELD)
         return self._drag_and_drop(src, tgt)
@@ -52,7 +57,7 @@ class HomePage(BasePage):
 
     @allure.step("Нажать кнопку \"Личный кабинет\"")
     def click_on_personal_space_button(self):
-        self._click_element(HomePageLocators.PERSONAL_SPACE_BUTTON)
+        self._click_element_js(HomePageLocators.PERSONAL_SPACE_BUTTON)
 
     @allure.step("Нажать кнопку \"Создать заказ\"")
     def click_create_order_button(self):
@@ -60,7 +65,7 @@ class HomePage(BasePage):
 
     @allure.step("Прочитать поле, куда приходит уведомление, что заказ начал готовиться")
     def get_your_order_is_being_prepared_field(self):
-        return self._is_element_displayed(HomePageLocators.YOUR_ORDER_IS_BEING_PREPARED)
+        return self._find_element(HomePageLocators.YOUR_ORDER_IS_BEING_PREPARED)
 
     @allure.step("Дождаться появления кнопки \"Создать заказ\"")
     def wait_for_create_order_button(self):
@@ -68,12 +73,13 @@ class HomePage(BasePage):
 
     @allure.step("Дождаться, когда исчезнет перекрывающий страницу элемент Modal Overlay")
     def wait_for_modal_overlay_to_disappear(self):
-        self.wait_for_element_to_disappear(HomePageLocators.MODAL_OVERLAY_ELEMENT)
-
-    @allure.step("Дождаться прогрузки картинки при оформлении заказа")
-    def wait_for_visibility_load_img(self):
-        return self._element_is_visible(HomePageLocators.LOADING_IMG_ORDER_FORMATION)
+        self._wait_for_element_to_disappear(HomePageLocators.MODAL_OVERLAY_ELEMENT)
 
     @allure.step("Получить номер созданного заказа")
-    def get_new_order_number(self):
-        return self._find_element(HomePageLocators.NEW_ORDER_NUMBER).text
+    def get_new_order_number(self, timeout=10, poll_frequency=1):
+        start_time = time.time()
+        while time.time() - start_time < timeout:
+            order_number = self._find_element(HomePageLocators.NEW_ORDER_NUMBER).text
+            if order_number != '9999':
+                return order_number
+            time.sleep(poll_frequency)

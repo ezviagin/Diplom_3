@@ -28,7 +28,7 @@ class AccountPage(HomePage):
 
     @allure.step("Кликаем по кнопке Войти")
     def click_enter_button(self):
-        self._click_element(AccountPageLocators.ENTER_BUTTON)
+        self._click_element_js(AccountPageLocators.ENTER_BUTTON)
 
     @allure.step("Ожидание наличия кнопки \"Войти в аккаунт\"")
     def wait_for_visibility_enter_into_account_button(self):
@@ -56,4 +56,3 @@ class AccountPage(HomePage):
 
     def wait_for_order_history_button(self):
         return self._element_is_visible(PersonalSpaceLocators.ORDERS_HISTORY_BUTTON)
-
