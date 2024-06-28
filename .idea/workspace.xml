@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3808ee5c-c41e-4a99-89a7-6bd57c480857" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2i5b55qU62I4unccyPDZediCCn0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_click_on_constructor_button.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_click_on_ingredient.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_click_on_order_feed_button.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_create_order_with_logged_in_user.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_drag_and_drop_fluor_bun.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_modal_overlay.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_home_page.TestHomePage.test_popup_windows_is_closed_by_click_on_cross.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.test_click_on_last_order.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.test_completed_order_appears_in_progress_section.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.test_increase_counter_completed_for_all_time.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.test_increase_counter_completed_for_today.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestFeedOrders.test_user_orders_history_displayed_on_feed_orders.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestOrderList.test_completed_order_appears_in_progress_section.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestOrderList.test_increase_counter_completed_for_all_time.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestOrderList.test_test.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_order_list.TestOrderList.test_user_orders_history_displayed_on_feed_orders.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.TestPasswordRecovery.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.TestPasswordRecovery.test_click_on_password_recovery_button.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.TestPasswordRecovery.test_recover_user_password.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.test_click_on_password_recovery_button.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.test_recover_user_password.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPasswordRecovery.test_show_hide_password_button.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPersonalSpacePage.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPersonalSpacePage.test_click_logout_page.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPersonalSpacePage.test_click_on_order_history.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.Python tests for test_personal_space_page.TestPersonalSpacePage.test_click_on_personal_space_button.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_home_page.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_order_list.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_personal_space_page.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.base_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.home_bage_locators.executor&quot;: &quot;Run&quot;,
+    &quot;Python.home_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.personal_space_locators.executor&quot;: &quot;Run&quot;,
+    &quot;Python.personal_space_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.urls.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/e.zvyagintsev/Diplom_3/user_api&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\e.zvyagintsev\Diplom_3\user_api" />
+      <recent name="C:\Users\e.zvyagintsev\Diplom_3" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests for tests.test_order_list.TestOrderList.test_increase_counter_completed_for_all_time">
+    <configuration name="Python tests for tests.test_order_list.TestOrderList.test_increase_counter_completed_for_all_time" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_order_list.TestOrderList.test_increase_counter_completed_for_all_time&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_order_list.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_order_list.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_personal_space_page.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_personal_space_page.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in tests" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="Diplom_3" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test_personal_space_page.py" />
+        <item itemvalue="Python tests.Python tests in test_order_list.py" />
+        <item itemvalue="Python tests.Python tests in tests" />
+        <item itemvalue="Python tests.Python tests for tests.test_order_list.TestOrderList.test_increase_counter_completed_for_all_time" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3808ee5c-c41e-4a99-89a7-6bd57c480857" name="Changes" comment="" />
+      <created>1718783198813</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718783198813</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_personal_space_page.py</url>
+          <line>85</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_home_page.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_order_list.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_order_list.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
