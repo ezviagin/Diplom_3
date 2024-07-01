@@ -18,16 +18,15 @@ class BasePage:
 
     def _find_element(self, locator: tuple[str, str], timeout: int = 10):
         try:
-            return WebDriverWait(self.driver, timeout).until(ec.presence_of_element_located(locator),
-                                                             f"Can't find element by locator {locator}")
-        except TimeoutError:
+            return WebDriverWait(self.driver, timeout).until(ec.presence_of_element_located(locator))
+        except TimeoutException:
             return None
 
     def _find_elements(self, locator: tuple[str, str], timeout: int = 10):
         try:
             return WebDriverWait(self.driver, timeout).until(ec.presence_of_all_elements_located(locator),
                                                              f"Can't find elements by locator {locator}")
-        except TimeoutError:
+        except TimeoutException:
             return None
 
     def _click_element(self, locator: tuple[str, str], timeout: int = 10):
@@ -62,14 +61,14 @@ class BasePage:
     def _element_is_visible(self, locator: tuple[str, str], timeout: int = 10):
         try:
             return WebDriverWait(self.driver, timeout).until(ec.visibility_of_element_located(locator))
-        except TimeoutError:
+        except TimeoutException:
             return False
 
     def _element_is_present(self, locator: tuple[str, str], timeout: int = 10):
         try:
-            WebDriverWait(self.driver, timeout).until(ec.presence_of_element_located(locator))
+            self._find_element(locator, timeout)
             return True
-        except TimeoutError:
+        except TimeoutException:
             return False
 
     def _scroll_to_element(self, locator: tuple[str, str], timeout: int = 10):
@@ -82,7 +81,10 @@ class BasePage:
     def _is_element_displayed(self, locator: tuple[str, str], timeout: int = 10) -> bool:
         try:
             element = self._find_element(locator, timeout)
-            return element.is_displayed()
+            if element is not None:
+                return element.is_displayed()
+            else:
+                return False
         except (NoSuchElementException, TimeoutException):
             return False
 

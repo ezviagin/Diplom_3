@@ -27,7 +27,6 @@ class HomePageLocators:
     CROSS_CLOSE_BUTTON = (By.XPATH, "(.//button[@type='button' and contains(@class, 'modal__close')])[1]")
 
     # Всплывающее окно со списком ингредиентов в заказе
-    #INGREDIENT_DETAILS_POPUP_WINDOW = (By.XPATH, ".//div[@class='Modal_modal__container__Wo2l_']")
     INGREDIENT_DETAILS_POPUP_WINDOW = (By.XPATH, "(.//div[@class='Modal_modal__container__Wo2l_'])[1]")
 
     # Поле для перетаскивания ингредиентов
@@ -54,3 +53,5 @@ class HomePageLocators:
         ".//h2[contains(@class,'Modal_modal__title_shadow__3ikwq Modal_modal__title__2L34m text "
         "text_type_digits-large mb-8')]",
     )
+
+    ANIMATION_FINISHED_AFTER_ORDER_CREATED = (By.XPATH, ".//div[@class='Modal_modal__P3_V5']")

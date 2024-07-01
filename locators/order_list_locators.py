@@ -14,6 +14,7 @@ class OrderListLocators:
         ".//button [@class='Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK' and @type= 'button']"
     )
 
+    # Кнопка-крестик закрытия информации об успешно созданном заказе
     CLOSE_SUCCESS_ORDER_WINDOW_BUTTON = (
         By.CSS_SELECTOR,
         "[class= 'Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK']",

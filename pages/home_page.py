@@ -2,7 +2,6 @@ import allure
 
 from locators.home_page_locators import HomePageLocators
 from pages.base_page import BasePage
-import time
 
 
 class HomePage(BasePage):
@@ -13,7 +12,7 @@ class HomePage(BasePage):
     def click_order_feed_button(self):
         return self._click_element_js(HomePageLocators.ORDER_FEED_HEADER_BUTTON)
 
-    @allure.step("Дрождаться появления заголовка \"Лента заказов\"")
+    @allure.step("Дождаться появления заголовка \"Лента заказов\"")
     def wait_for_order_feed_header(self):
         return self._element_is_visible(HomePageLocators.ORDER_FEED_TITLE)
 
@@ -76,10 +75,6 @@ class HomePage(BasePage):
         self._wait_for_element_to_disappear(HomePageLocators.MODAL_OVERLAY_ELEMENT)
 
     @allure.step("Получить номер созданного заказа")
-    def get_new_order_number(self, timeout=10, poll_frequency=1):
-        start_time = time.time()
-        while time.time() - start_time < timeout:
-            order_number = self._find_element(HomePageLocators.NEW_ORDER_NUMBER).text
-            if order_number != '9999':
-                return order_number
-            time.sleep(poll_frequency)
+    def get_new_order_number(self):
+        self._element_is_present(HomePageLocators.ANIMATION_FINISHED_AFTER_ORDER_CREATED)
+        return self._find_element(HomePageLocators.NEW_ORDER_NUMBER).text

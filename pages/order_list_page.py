@@ -2,10 +2,10 @@ import allure
 
 from conftest import driver
 from locators.order_list_locators import OrderListLocators
-from pages.account_page import AccountPage
+from pages.base_page import BasePage
 
 
-class OrderListPage(AccountPage):
+class OrderListPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -15,7 +15,7 @@ class OrderListPage(AccountPage):
 
     @allure.step("Кликаем по последнему заказу")
     def click_last_order(self):
-        button = self._click_element(OrderListLocators.LAST_ORDER)
+        self._click_element(OrderListLocators.LAST_ORDER)
 
     @allure.step("Получение списка заказов в работе и последних готовых")
     def get_orders_list(self):
